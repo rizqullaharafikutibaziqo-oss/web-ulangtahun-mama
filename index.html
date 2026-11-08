@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f3">
+<title>Untuk Mama ♡</title>
+<style>
+:root{--rose:#c65372;--deep:#71364b;--cream:#fffaf7;--pink:#ffe5eb;--ink:#49323a}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:linear-gradient(145deg,#fff8f5,#ffe8ee 55%,#fff4e9);min-height:100vh}
+button,input{font:inherit}
+.hero{min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:42px 18px;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"✿";position:absolute;color:#e9a6b6;font-size:100px;opacity:.24}
+.hero:before{top:7%;left:6%;transform:rotate(-20deg)}.hero:after{bottom:7%;right:7%;transform:rotate(25deg)}
+.hero-inner{max-width:720px;position:relative;z-index:1}
+.eyebrow{letter-spacing:4px;text-transform:uppercase;font:11px Arial,sans-serif;color:var(--rose)}
+h1{font-size:clamp(48px,11vw,88px);font-weight:normal;line-height:.98;margin:18px 0;color:var(--deep)}
+.subtitle{font-size:19px;line-height:1.7;max-width:540px;margin:0 auto 26px}
+button,.file-label{border:0;border-radius:999px;padding:13px 22px;background:var(--rose);color:white;cursor:pointer;box-shadow:0 7px 20px #c6537230;transition:.2s}
+button:hover,.file-label:hover{transform:translateY(-2px);background:var(--deep)}
+main{max-width:900px;margin:auto;padding:0 18px 70px}
+.panel{background:#ffffffc9;border:1px solid #f4d4dc;border-radius:24px;padding:clamp(20px,5vw,38px);margin:22px 0;box-shadow:0 12px 35px #8a526014}
+h2{font-size:30px;font-weight:normal;color:var(--deep);margin:0 0 12px}
+.note{font-size:17px;line-height:1.85;white-space:pre-line}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:16px 0}
+input[type=file]{display:none}
+.hint{font:13px/1.6 Arial,sans-serif;color:#876c75}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;margin-top:18px}
+.photo{position:relative;aspect-ratio:4/5;border-radius:17px;overflow:hidden;background:#f9e2e8}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo span{position:absolute;bottom:0;left:0;right:0;padding:25px 10px 10px;color:white;background:linear-gradient(transparent,#0008);font:13px Arial,sans-serif}
+.empty{border:1.5px dashed #e6b8c5;border-radius:18px;padding:28px;text-align:center;color:#9c7481}
+audio{width:100%;margin-top:12px}
+.music-title{font-size:18px;color:var(--deep);margin-top:12px}
+footer{text-align:center;padding:30px 16px 45px;color:#9b7180;font-size:14px}
+.small{font:12px/1.6 Arial,sans-serif;color:#987b84}
+@media(max-width:480px){.hero{min-height:82vh}.subtitle{font-size:17px}.panel{border-radius:19px}}
+</style>
+</head>
+<body>
+<section class="hero">
+ <div class="hero-inner">
+  <div class="eyebrow">9 November · Hari spesial</div>
+  <h1>Selamat<br>Ulang Tahun,<br>Mama ♡</h1>
+  <p class="subtitle">Untuk perempuan hebat yang selalu punya tempat paling istimewa di hidupku.</p>
+  <button onclick="document.getElementById('surat').scrollIntoView({behavior:'smooth'})">Buka hadiah kecil ini ↓</button>
+ </div>
+</section>
+
+<main>
+ <section class="panel" id="surat">
+  <div class="eyebrow">A little letter for you</div>
+  <h2>Untuk Mama tersayang</h2>
+  <div class="note" id="message">Selamat ulang tahun, Ma.
+
+Terima kasih untuk setiap doa, perhatian, kesabaran, dan kasih sayang yang Mama berikan. Mungkin aku belum selalu bisa mengungkapkan rasa terima kasihku, tapi aku bersyukur sekali punya Mama.
+
+Semoga Mama selalu diberi kesehatan, umur yang berkah, hati yang tenang, dan kebahagiaan dalam setiap langkah. Semoga semua doa baik Mama satu per satu Allah kabulkan.
+
+Maaf kalau aku masih sering bikin Mama kesal. Aku akan terus belajar menjadi anak yang lebih baik.
+
+Aku sayang Mama. Hari ini dan seterusnya. ♡</div>
+  <p class="small">Teks ucapan ini bisa kamu ubah langsung di dalam file HTML, cari bagian <b>id="message"</b>.</p>
+ </section>
+
+ <section class="panel">
+  <div class="eyebrow">Our little memories</div>
+  <h2>Galeri kenangan</h2>
+  <p class="hint">Pilih foto-foto Mama atau kenangan kalian. Foto akan tampil sebagai galeri di halaman ini.</p>
+  <div class="toolbar">
+   <label class="file-label" for="photos">＋ Masukkan foto</label>
+   <input id="photos" type="file" accept="image/*" multiple>
+   <button type="button" id="clearPhotos" style="background:#a98b95">Hapus foto</button>
+  </div>
+  <div id="gallery" class="gallery"><div class="empty">Foto pilihanmu akan muncul di sini ♡</div></div>
+ </section>
+
+ <section class="panel">
+  <div class="eyebrow">A song for Mama</div>
+  <h2>Lagu untuk hari istimewa</h2>
+  <p class="hint">Masukkan file lagu dari perangkatmu (MP3, M4A, atau WAV), lalu tekan play.</p>
+  <div class="toolbar">
+   <label class="file-label" for="song">♫ Pilih lagu</label>
+   <input id="song" type="file" accept="audio/*">
+  </div>
+  <div class="music-title" id="songName">Belum ada lagu yang dipilih</div>
+  <audio id="player" controls preload="metadata"></audio>
+  <p class="small">Catatan: file foto dan lagu yang dipilih lewat tombol di atas hanya tersedia di browser/perangkat yang memilihnya. Untuk ditampilkan kepada Mama lewat link publik, letakkan file foto dan lagu di folder website lalu hubungkan di HTML.</p>
+ </section>
+ <footer>Dibuat dengan penuh rasa sayang · Untuk Mama ♡</footer>
+</main>
+
+<script>
+const photoInput=document.getElementById('photos');
+const gallery=document.getElementById('gallery');
+const songInput=document.getElementById('song');
+const player=document.getElementById('player');
+let photoUrls=[];
+photoInput.addEventListener('change',()=>{
+  photoUrls.forEach(URL.revokeObjectURL); photoUrls=[];
+  gallery.innerHTML='';
+  const files=[...photoInput.files].filter(f=>f.type.startsWith('image/'));
+  if(!files.length){gallery.innerHTML='<div class="empty">Belum ada foto yang dipilih.</div>';return;}
+  files.forEach((file,i)=>{
+    const url=URL.createObjectURL(file);photoUrls.push(url);
+    const card=document.createElement('div');card.className='photo';
+    const img=document.createElement('img');img.src=url;img.alt='Kenangan '+(i+1);
+    const caption=document.createElement('span');caption.textContent='Kenangan '+(i+1);
+    card.append(img,caption);gallery.append(card);
+  });
+});
+document.getElementById('clearPhotos').addEventListener('click',()=>{
+  photoUrls.forEach(URL.revokeObjectURL);photoUrls=[];photoInput.value='';
+  gallery.innerHTML='<div class="empty">Foto pilihanmu akan muncul di sini ♡</div>';
+});
+let songUrl=null;
+songInput.addEventListener('change',()=>{
+  const file=songInput.files[0];if(!file)return;
+  if(songUrl)URL.revokeObjectURL(songUrl);
+  songUrl=URL.createObjectURL(file);player.src=songUrl;
+  document.getElementById('songName').textContent='♫ '+file.name;
+  player.load();
+});
+</script>
+</body>
+    </html>
